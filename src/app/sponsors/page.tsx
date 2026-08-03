@@ -109,6 +109,12 @@ export default function SponsorsPage() {
         logo: "HAKKO_MAIN logo.png",
         website: "https://hakkousa.com/",
       },
+
+      {
+        name: "VI-Grade",
+        logo: "vi-grade_red.png",
+        website: "https://www.vi-grade.com/",
+      },
     ],
     bronze: [
       {
@@ -128,9 +134,8 @@ export default function SponsorsPage() {
       },
       {
         name: "MakPlate",
-        description: "Contributing to our racing success",
         logo: "MakPlateLogo.svg",
-        website: "#"
+        website: "https://makplate.com/"
       },
       {
         name: "Total Phase",

@@ -24,7 +24,7 @@ const ShimmerTitle: React.FC<ShimmerTitleProps> = ({
       setTimeout(() => {
         if (shimmerRef.current) {
           shimmerRef.current.style.animation =
-            `diagonalShimmer 3s cubic-bezier(.05,.59,.44,.94) forwards`;
+            `diagonalShimmer 7s cubic-bezier(.05,.59,.44,.94) 0s infinite running`;
         }
       }, delayMs);
     }
@@ -59,6 +59,9 @@ const ShimmerTitle: React.FC<ShimmerTitleProps> = ({
         @keyframes diagonalShimmer {
           0% {
             background-position: -50% 0;
+          }
+          60% {
+            background-position: 110% 0;
           }
           100% {
             background-position: 100% 0;

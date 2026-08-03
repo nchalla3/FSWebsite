@@ -43,11 +43,12 @@ const SubteamCard: React.FC<SubteamCardProps> = ({
   };
   
   return (
-    <div className="group w-15/16 h-full mx-auto lg:cursor-default cursor-pointer" onClick={handleCardClick}>
+    <div className="group h-full mx-auto lg:cursor-default cursor-pointer" onClick={handleCardClick}>
       {/* Stable hover container - does not get resized */}
       <div 
         className="relative w-full mx-auto overflow-hidden rounded-xl aspect-[4/5] lg:aspect-[16/9]"
         style={{ 
+          aspectRatio: aspectRatio,
           boxShadow: `0px 4px 0px rgba(45, 195, 241, 1)`
         }}
       >
@@ -109,7 +110,7 @@ const SubteamCard: React.FC<SubteamCardProps> = ({
               >
                 {/* Lead Name */}
                 <h4 
-                  className="text-xs md:text-base font-bold text-center"
+                  className="text-xs sm:text-base font-bold text-center"
                   style={{ color: colors.slugYellow }}
                 >
                   {leadName}
@@ -117,7 +118,7 @@ const SubteamCard: React.FC<SubteamCardProps> = ({
 
                 {/* Subteam Title */}
                 <h5 
-                  className="text-xs md:text-sm font-semibold text-center"
+                  className="text-xs font-semibold text-center"
                   style={{ color: colors.textColor }}
                 >
                   {subteamName} Lead

@@ -14,6 +14,23 @@ export const metadata: Metadata = {
   description: "Formula Slug's Website - Photo Gallery",
 };
 
+function shuffleArray(array: any[]) {
+  let currentIndex = array.length;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    const randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+}
+
+
 export default async function PhotosPage() {
   // Read the /public/photos directory at build time (server-side only)
   const photosDir = path.join(process.cwd(), "public", "photos");
@@ -23,7 +40,7 @@ export default async function PhotosPage() {
       .filter(f =>
         /^[^.].*\.(jpe?g|png|webp|gif)$/i.test(f)
       );
-  } catch (e) {
+  } catch (_) {
     // Directory may not exist yet
   }
 
@@ -51,36 +68,9 @@ export default async function PhotosPage() {
     })
   );
 
-  // Senior Night filenames added 2026-06-02
-  const seniorNightFiles = new Set(
-    fs.readdirSync(path.join(process.cwd(), "public", "photos"))
-      .filter(f => {
-        const added = fs.statSync(path.join(process.cwd(), "public", "photos", f)).mtime;
-        return added >= new Date("2026-06-02") && /^[^.].*\.(jpe?g|png|webp|gif)$/i.test(f);
-      })
-  );
-
-  const oldPhotos = photoData
-    .filter(p => !seniorNightFiles.has(path.basename(p.src)))
-    .sort((a, b) => b.dateTaken.getTime() - a.dateTaken.getTime());
-
-  const newPhotos = photoData
-    .filter(p => seniorNightFiles.has(path.basename(p.src)));
-
-  // Seeded shuffle so order is stable across builds
-  function seededRandom(seed: number) {
-    let s = seed;
-    return () => { s = (s * 1664525 + 1013904223) & 0xffffffff; return (s >>> 0) / 0xffffffff; };
-  }
-  const rng = seededRandom(20260602);
-
-  // Randomly insert each new photo at a position within the old sequence
-  const result = [...oldPhotos];
-  for (const photo of newPhotos) {
-    const pos = Math.floor(rng() * (result.length + 1));
-    result.splice(pos, 0, photo);
-  }
-  const photoDataSorted = result;
+  // // Sort by dateTaken, newest first
+  // photoData.sort((a, b) => b.dateTaken.getTime() - a.dateTaken.getTime());
+  shuffleArray(photoData);
 
   return (
     <AutoScrollOnIdle>
@@ -95,7 +85,7 @@ export default async function PhotosPage() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0">
-          {photoDataSorted.map((photo, idx) => (
+          {photoData.map((photo, idx) => (
             <div 
               key={idx} 
               className="w-full aspect-[4/3] overflow-hidden flex items-center justify-center"
@@ -111,7 +101,7 @@ export default async function PhotosPage() {
               />
             </div>
           ))}
-          {photoDataSorted.length === 0 && (
+          {photoData.length === 0 && (
             <div 
               className="col-span-full text-center"
               style={{ color: colors.gray[400] }}

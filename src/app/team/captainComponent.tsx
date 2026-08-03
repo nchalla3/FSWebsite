@@ -38,7 +38,7 @@ const CaptainCard: React.FC<CaptainCardProps> = ({
           
           {/* Always visible overlay block */}
           <div 
-            className="absolute bottom-4 left-4 right-4 p-3 rounded-lg"
+            className="absolute bottom-2 left-4 right-4 p-1 rounded-lg"
             style={{ backgroundColor: colors.primary }}
           >
             {/* Captain Name */}
