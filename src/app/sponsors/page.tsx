@@ -76,12 +76,6 @@ export default function SponsorsPage() {
       },
 
       {
-        name: "Hexagon",
-        logo: "HexagonLogo.png",
-        website: "https://www.hexagon.com/",
-      },
-
-      {
         name: "Black Stallion",
         logo: "BlackStallionLogo.png",
         website: "https://www.blackstallion.com/",
@@ -114,6 +108,18 @@ export default function SponsorsPage() {
         name: "VI-Grade",
         logo: "vi-grade_red.png",
         website: "https://www.vi-grade.com/",
+      },
+
+      {
+        name: "Hesse Mechatronics",
+        logo: "Hesse_Logo_rgb-web.jpg",
+        website: "https://www.hesse-mechatronics.com/en/",
+      },
+
+      {
+        name: "RapidAxis",
+        logo: "RapidAxis-logo-standard.png",
+        website: "https://rapidaxis.com/",
       },
     ],
     bronze: [
@@ -163,22 +169,15 @@ export default function SponsorsPage() {
         website: "https://sendcutsend.com/",
       },
       {
-        name: "Andrew Lee",
+        name: "HMS",
+        description: "Essential support for our operations",
+        logo: "hms.logo.color.whiteMS.png",
+        website: "https://www.hmsmotorsport.com/collections/hms",
       },
       {
-        name: "Robert Shen",
-      },
-      {
-        name: "Abhishek and Tuhina Lal",
-      },
-      {
-        name: "Ruhmit Sahu",
-      },
-      {
-        name: "Boogie",
-      },
-      {
-        name: "Ivan Kalastirsky",
+        name: "College 9 Senate",
+        logo: "ucsc-logo-blue.jpg",
+        website: "https://collegenine.ucsc.edu/",
       },
     ],
 
@@ -198,12 +197,6 @@ export default function SponsorsPage() {
         description: "Gives you Wings",
         logo: "RedBullLogo.svg",
         website: "https://redbull.com",
-      },
-      {
-        name: "HMS",
-        description: "Essential support for our operations",
-        logo: "hms.logo.color.whiteMS.png",
-        website: "https://www.hmsmotorsport.com/collections/hms"
       },
     ],
   };
