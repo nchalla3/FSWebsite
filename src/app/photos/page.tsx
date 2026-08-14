@@ -68,8 +68,7 @@ export default async function PhotosPage() {
     })
   );
 
-  // // Sort by dateTaken, newest first
-  // photoData.sort((a, b) => b.dateTaken.getTime() - a.dateTaken.getTime());
+  // Can't sort by time as Git doesn't store file timestamps
   shuffleArray(photoData);
 
   return (

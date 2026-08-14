@@ -372,15 +372,14 @@ export default function Home() {
         <p className="text-lg text-gray-100 mb-4 text-center max-w-6xl">
           Formula Slug is UC Santa Cruz's premier student-run electric vehicle
           team, proudly competing each June in the international Formula SAE
-          Electric competition in Michigan. There, we put our student-built
-          racecar to the test against teams from around the world in a rigorous
-          series of technical inspections, static events (design, cost, and
-          business presentations), and dynamic events measuring acceleration,
-          handling, endurance, and overall performance.
+          Electric competition in Michigan. We put our student-built racecar to
+          the test against teams from around the world in a rigorous series of
+          technical inspections, static events (design, cost, and business
+          presentations), and dynamic events measuring acceleration, handling,
+          endurance, and overall performance.
         </p>
         <p className="text-lg text-gray-100 mb-4 text-center max-w-6xl">
-          Our student-led team of aspiring engineers are more than just a
-          college organization — we're a team built on collaboration, technical
+          Our student-led engineering team is built on collaboration, technical
           excellence, and ambition. Formula Slug members take on real
           engineering challenges, grow into leaders, and work as one cohesive
           team to push the boundaries of electric racecar design through Formula
@@ -468,14 +467,20 @@ export default function Home() {
                 key={2}
               />,
               <img
-                src="/photos/20250615 MIS UCSC SAE E slug for web-114.jpg"
+                src="/photos/fsae_ev_25_03850.jpg"
                 className="w-full h-full object-cover"
                 loading="lazy"
                 key={3}
               />,
+              <img
+                src="/photos/20250615 MIS UCSC SAE E slug for web-114.jpg"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                key={4}
+              />,
             ]}
             imagesOnLeft={false}
-            imageAspectRatio={16/9} // YouTube embed is 16:9
+            imageAspectRatio={16 / 9} // YouTube embed is 16:9
           />
           <HistoryEntry
             carName={"FS-2"}
@@ -514,7 +519,7 @@ export default function Home() {
               />,
             ]}
             imagesOnLeft={true}
-            imageAspectRatio={1327/822} // FS2AtComp photo is a weird ratio
+            imageAspectRatio={1327 / 822} // FS2AtComp photo is a weird ratio
           />
           <HistoryEntry
             carName={"FS-1"}
@@ -833,7 +838,8 @@ export default function Home() {
             />
             <FAQItem
               question="How can this club help my career?"
-              answer="Our team, and FSAE as a whole, emphasizes building engineers. We hold design reviews, work under constraints, and learn various design skills required for our competition and industry as a whole. Many of these skills, technical and non-technical, help our team members and alumni land jobs and internships at companies such as Zero Motorcycles, Tesla, Rivian, Apple, etc. With the wide network that comes with being a part of FSAE, students are also given the chance to network with other schools and industry professionals." />
+              answer="Our team, and FSAE as a whole, emphasizes building engineers. We hold design reviews, work under constraints, and learn various design skills required for our competition and industry as a whole. Many of these skills, technical and non-technical, help our team members and alumni land jobs and internships at companies such as Zero Motorcycles, Tesla, Rivian, Apple, etc. With the wide network that comes with being a part of FSAE, students are also given the chance to network with other schools and industry professionals."
+            />
             <FAQItem
               question="How do I get access to the lab space?"
               answer="All team members are required to complete the Slugworks (Baskin Engineering's makerspace) canvas course to get access to the club space. The canvas is not out yet but the team will be notified on slack for when it is released!"
